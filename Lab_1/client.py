@@ -3,7 +3,7 @@ import sys
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-server_address = ('localhost', 20000)
+server_address = ('localhost', 12345)
 sock.connect(server_address)
 
 try:
