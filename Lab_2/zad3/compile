@@ -1,0 +1,11 @@
+#!/bin/bash
+
+cc -g    -c -o app_clnt.o app_clnt.c
+cc -g    -c -o proc1.o proc1.c
+cc -g    -c -o proc3.o proc3.c
+cc -g    -c -o app_xdr.o app_xdr.c
+cc -g     -o proc1  app_clnt.o proc1.o app_xdr.o -lnsl 
+cc -g     -o proc3  app_clnt.o proc3.o app_xdr.o -lnsl 
+cc -g    -c -o app_svc.o app_svc.c
+cc -g    -c -o proc2.o proc2.c
+cc -g     -o proc2  app_svc.o proc2.o app_xdr.o -lnsl
