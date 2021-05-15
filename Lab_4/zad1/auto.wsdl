@@ -1,0 +1,71 @@
+<!--  
+WAT
+2021-05-15
+let you post/retrieve online message by SOAP protocol
+
+Online WSDL 1.1 SOAP generator 0.2
+Julien Blitte
+  -->
+<definitions xmlns:tns="pl.wat.ppr.wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsd1="pl.wat.ppr.xsd" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" name="let you post/retrieve online message by SOAP protocol" targetNamespace="pl.wat.ppr.wsdl">
+<!--  definition of datatypes  -->
+<types>
+<schema xmlns="http://www.w3.org/2000/10/XMLSchema" targetNamespace="pl.wat.ppr.xsd">
+<element name="arg1">
+<complexType>
+<all>
+<element name="value" type="string"/>
+</all>
+</complexType>
+</element>
+<element name="arg2">
+<complexType>
+<all>
+<element name="value" type="string"/>
+</all>
+</complexType>
+</element>
+<element name="sum">
+<complexType>
+<all>
+<element name="value" type="string"/>
+</all>
+</complexType>
+</element>
+</schema>
+</types>
+<!--  response messages  -->
+<message name="returns_sum">
+<part name="sum" type="xsd:sum"/>
+</message>
+<!--  request messages  -->
+<message name="getSum">
+<part name="arg1" type="xsd:arg1"/>
+<part name="arg2" type="xsd:arg2"/>
+</message>
+<!--  server's services  -->
+<portType name="simpleService">
+<operation name="getSum">
+<input message="tns:getSum"/>
+<output message="tns:returns_sum"/>
+</operation>
+</portType>
+<!--  server encoding  -->
+<binding name="simpleService_webservices" type="tns:simpleService">
+<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+<operation name="getSum">
+<soap:operation soapAction="urn:xmethods-delayed-quotes#getSum"/>
+<input>
+<soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+</binding>
+<!--  access to service provider  -->
+<service name="PC">
+<port name="PC_0" binding="simpleService_webservices">
+<soap:address location="http://127.0.0.1:1234"/>
+</port>
+</service>
+</definitions>
