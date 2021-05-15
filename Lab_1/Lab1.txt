@@ -1,0 +1,17 @@
+Zadanie I
+Zaimplementować aplikacje działające w technologii klient-serwer, przy czym
+• klient pobiera dane wejściowe z wejścia standardowego (STDIN) i za pomocą mechanizmu
+gniazd przekazuje je do serwera,
+• serwer odbiera dane od klienta, konwertuje je do postaci heksadecymalnej i wyświetla na
+standardowym wyjściu (STDOUT).
+Klient: Python
+Server: C
+
+Zadanie II
+Należy zaimplementować wieloprocesowy serwer, który dane odebrane od każdego klienta
+(zaimplementowanego w zadaniu I) będzie zapisywał w oddzielnym pliku, przy czym nazwa tego
+pliku powinna odpowiadać numerowi PID procesu klienta.
+
+Zadanie III
+Należy aplikacje zaimplementowane podczas realizacji zadania numer II zmodyfikować w taki
+sposób, aby do komunikacji wykorzystywane były gniazda UDP.
