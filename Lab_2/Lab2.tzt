@@ -1,0 +1,21 @@
+Zadanie I
+Zaimplementować w języku C aplikacje działające w technologii klient-serwer i wykorzystujące do
+komunikacji mechanizm RPC, przy czym
+• klient pobiera od użytkownika dwie liczby (jako argumenty) i przesyła je do serwera,
+• serwer odbiera dwie liczby od klienta, dodaje je do siebie i zwraca klientowi,
+• klient wypisuje wynik na standardowe wyjście (STDOUT).
+
+Zadanie II
+Zaimplementować w języku C aplikacje działające w technologii klient-serwer, przy czym
+• klient pobiera dane wejściowe z wejścia standardowego (STDIN) i za pomocą mechanizmu
+RPC przekazuje je do serwera,
+• serwer odbiera dane od klienta, konwertuje je do postaci heksadecymalnej i wyświetla na
+standardowym wyjściu (STDOUT).
+
+Zadanie III
+Należy zaimplementować trzy programy, które będą współpracowały w następujący sposób:
+• proces I pobiera dane wejściowe z wejścia standardowego (STDIN) i przekazuje je do
+procesu II (rpc),
+• proces II odbiera dane, konwertuje je do postaci heksadecymalnej i przekazuje do procesu
+III (rpc),
+• proces III odbiera dane od procesu II i wypisuje je na wyjście standardowe (STDOUT)
